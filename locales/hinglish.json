@@ -1,0 +1,215 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "Hamare Baare Mein",
+    "services": "Services & Kaam",
+    "portfolio": "Hamara Kaam",
+    "gallery": "Gallery",
+    "clients": "Hamare Clients",
+    "contact": "Contact Karein",
+    "getInTouch": "Get in Touch"
+  },
+  "home": {
+    "heroTagline": "18 Saal Ka Real-World Experience. Ab AI Ke Saath.",
+    "heroIntro": "Visionary Masters Global Pvt Ltd, karib do dashak ke hands-on operational experience ko modern AI-powered business support ke saath jodta hai — hum companies ko communication, reporting aur roz ke kaam-kaaj ko traditional agencies se zyada fast aur smart tareeke se streamline karne mein madad karte hain.",
+    "ctaButton": "Get in Touch",
+    "servicesTeaser": "Hum Kya Karte Hain",
+    "servicesTeaserSubtitle": "Business ko smoothly chalane wale everyday kaam ke liye practical, AI-powered support.",
+    "viewAllServices": "Saari Services Dekhein",
+    "aboutTeaser": "Real experience. Real discipline. Real results.",
+    "aboutTeaserBody": "Live events ki high-pressure duniya mein 18 saal bitane ke baad Vineet Grover dwara shuru kiya gaya, Visionary Masters Global usi discipline ko modern AI tools ke saath business support mein leke aata hai.",
+    "learnMore": "Aur Jaanein",
+    "portfolioTeaser": "Recent Kaam",
+    "portfolioTeaserSubtitle": "Hamne apne clients ke liye jo kaam kiya hai, uspar ek nazar.",
+    "viewPortfolio": "Hamara Kaam Dekhein"
+  },
+  "about": {
+    "pageTitle": "Hamare Baare Mein",
+    "overviewTitle": "Company Overview",
+    "overviewBody": "Visionary Masters Global Pvt Ltd karib do dashak ke hands-on operational experience ko modern AI-powered business support ke saath combine karti hai. Is principle par based ki real-world discipline aur cutting-edge technology saath milkar wo results dete hain jo traditional agencies nahi de sakti, hum businesses ko unke operations, reporting aur communication ko fast aur smart tareeke se streamline karne mein madad karte hain.",
+    "founderNoteTitle": "Founder Ka Note",
+    "founderNoteBody": "Hamare founder, Vineet Grover, ne live events ki high-pressure duniya mein 18 saal bitaye — jahan delay ki koi jagah nahi hoti aur har detail matter karti hai. Wahi discipline ab decide karti hai ki Visionary Masters Global kaise kaam karta hai: reliable, detail-driven, aur AI tools se powered jo kaam jaldi complete karte hain.",
+    "founderName": "Vineet Grover",
+    "founderTitle": "Founder & Director",
+    "certificationsTitle": "Team Certifications",
+    "certificationsSubtitle": "be10x AI Career Accelerator Program",
+    "certifications": [
+      "AI Fundamentals & Ecosystem Mastery",
+      "AI Agents & Autonomous Systems (N8N Automation)",
+      "AI Tools Workshop (ChatGPT-based Productivity)",
+      "Certified AI Office & Productivity Specialist",
+      "Certified AI-Powered Data Analytics Specialist"
+    ]
+  },
+  "services": {
+    "pageTitle": "Services",
+    "sectionTitle": "Visionary Masters Global — Services",
+    "sectionSubtitle": "Aapke business ko smoothly chalane ke liye banayi gayi aath practical, AI-powered services.",
+    "readMore": "Aur Padhein",
+    "readLess": "Kam Padhein",
+    "whatItIs": "Yeh Kya Hai",
+    "whatsIncluded": "Isme Kya Included Hai",
+    "outcome": "Outcome",
+    "launchingSoon": "Jald Aa Raha Hai",
+    "aiCapabilitiesTitle": "AI Se Powered, Experience Par Based",
+    "aiCapabilitiesBody": "Har service modern AI tools — generative design se lekar automated workflows tak — aur 18 saal ke real operational discipline par based hai.",
+    "items": [
+      {
+        "id": "email-communication",
+        "title": "Email & Client Communication",
+        "shortDescription": "Professional email management aur client correspondence jo har conversation ko fast, consistent aur polished rakhta hai.",
+        "image": "email-template-sample.png",
+        "whatItIs": "Ek complete email aur client-communication setup — professionally likhe templates, structured response workflows, aur AI-assisted drafting jo aapki client conversations ko sharp aur brand ke hisaab se rakhti hai.",
+        "whatsIncluded": [
+          "Common scenarios (inquiries, follow-ups, proposals, thank-yous) ke liye custom email templates",
+          "Fast, zyada consistent replies ke liye AI-assisted drafting",
+          "Saari correspondence mein apply hone wale tone aur brand-voice guidelines",
+          "Organized inbox workflows aur response-time tracking"
+        ],
+        "outcome": "Fast response times, zyada professional client-facing communication, aur kam miss hue follow-ups."
+      },
+      {
+        "id": "powerbi-dashboards",
+        "title": "Power BI Dashboards & Business Reporting",
+        "shortDescription": "Interactive Power BI dashboards jo raw business data ko clear, actionable insight mein badalte hain.",
+        "image": "powerbi-dashboard-sample.png",
+        "whatItIs": "Aapke existing data sources — sales, operations, finance ya marketing — se bane interactive, visually clean Power BI dashboards, taaki decision-makers ek nazar mein important cheezein dekh sakein.",
+        "whatsIncluded": [
+          "Excel, SQL ya cloud sources se data connection aur cleanup",
+          "Aapke business ke liye relevant KPIs ke saath custom dashboard design",
+          "Deeper analysis ke liye drill-down reports aur filters",
+          "Data ko current rakhne ke liye scheduled refresh setup"
+        ],
+        "outcome": "Business performance ke liye ek reliable source of truth — ab spreadsheets mein dhundhne ki zarurat nahi."
+      },
+      {
+        "id": "mis-reporting",
+        "title": "MIS Reporting",
+        "shortDescription": "Structured Management Information System reports jo leadership ko informed rakhti hain aur decisions ko data-driven banati hain.",
+        "image": "mis-report-sample.png",
+        "whatItIs": "Recurring MIS reports — daily, weekly ya monthly — jo operational aur financial data ko ek aise format mein consolidate karti hain jispar leadership turant action le sake.",
+        "whatsIncluded": [
+          "Aapke KPIs aur reporting cycle ke around report structure",
+          "Multiple departments ya sources se data consolidation",
+          "Consistent formatting aur version control",
+          "Email ya shared drive ke through schedule par delivery"
+        ],
+        "outcome": "Leadership ko har department se data maange bina business ki clear, consistent picture milti hai."
+      },
+      {
+        "id": "excel-solutions",
+        "title": "Excel Solutions",
+        "shortDescription": "Aapke exact workflow ke liye banaye gaye custom Excel trackers, calculators aur automated workbooks.",
+        "image": "excel-tracker-sample.png",
+        "whatItIs": "Purpose-built Excel workbooks — trackers, calculators, inventory sheets, budget tools — jo aapki team ke actual kaam karne ke tareeke ke hisaab se design kiye gaye hain, formulas aur automation ke saath jo manual effort hata dete hain.",
+        "whatsIncluded": [
+          "Scratch se custom tracker ya workbook design",
+          "Formula automation, conditional formatting aur data validation",
+          "Workbook ke andar dashboards aur summary views",
+          "Sheet ko kaise use aur maintain karein, uski training"
+        ],
+        "outcome": "Kam manual data entry, kam errors, aur ek aisa tool jo aapki team actually use karti rahegi."
+      },
+      {
+        "id": "presentations",
+        "title": "Presentations",
+        "shortDescription": "Polished, professional presentations jo aapke message ko clearly aur confidence ke saath communicate karte hain.",
+        "image": "presentation-slide-sample.png",
+        "whatItIs": "Business presentations — pitch decks, board updates, client proposals, training material — clarity aur visual impact ke liye design kiye gaye, AI-assisted design tools use karke banaye ya refine kiye jaate hain.",
+        "whatsIncluded": [
+          "Aapke key message ke around slide structure aur storyline",
+          "Professional, brand ke hisaab se visual design",
+          "Supporting numbers ke liye charts aur data visualization",
+          "Different audiences ke liye speaker notes aur formatting"
+        ],
+        "outcome": "Ek aisa presentation jo message ko clearly deliver kare aur professional impression chhode."
+      },
+      {
+        "id": "simple-websites",
+        "title": "Simple Websites",
+        "shortDescription": "Un businesses ke liye clean, fast, mobile-friendly websites jinhe bina extra overhead ke online presence chahiye.",
+        "image": null,
+        "whatItIs": "Simple, professional websites — landing pages, small business sites, portfolio sites — fast banayi gayi, mobile-responsive aur maintain karne mein easy.",
+        "whatsIncluded": [
+          "Aapke brand ke hisaab se custom design",
+          "Mobile-responsive layout aur fast load times",
+          "Contact forms, maps aur essential business information",
+          "Deployment aur basic hosting guidance"
+        ],
+        "outcome": "Mahino nahi, dino mein live professional online presence."
+      },
+      {
+        "id": "ai-video-generation",
+        "title": "AI Video Generation & Voiceover",
+        "shortDescription": "Marketing, training aur social media ke liye AI-generated video content aur voiceovers.",
+        "image": "video-generation-sample.png",
+        "whatItIs": "AI generation tools use karke banaye gaye short-form aur business videos — natural-sounding AI voiceovers ke saath — marketing, product explainers aur internal training ke liye.",
+        "whatsIncluded": [
+          "Script writing aur storyboard planning",
+          "AI-generated visuals aur video sequences",
+          "Aapki zarurat ki language aur tone mein AI voiceover",
+          "Editing, captions, aur har platform ke liye sahi format mein export"
+        ],
+        "outcome": "Traditional production cost ke fraction mein fast banaya gaya professional-looking video content."
+      },
+      {
+        "id": "workflow-automation",
+        "title": "Workflow Automation (N8N)",
+        "shortDescription": "Automated workflows jo aapke tools ko connect karte hain aur repetitive manual kaam khatam karte hain.",
+        "image": "n8n-workflow-sample.png",
+        "badge": "launchingSoon",
+        "whatItIs": "N8N par banaye gaye custom automation workflows jo aapke apps, forms, spreadsheets aur communication tools ko connect karte hain — taaki repetitive tasks khud-ba-khud chalte rahein.",
+        "whatsIncluded": [
+          "Automation opportunities identify karne ke liye workflow mapping",
+          "Aapke existing tools ko connect karne wale custom N8N workflows",
+          "Automated notifications, data syncing aur report generation",
+          "Ongoing monitoring aur refinement"
+        ],
+        "outcome": "Ghanto ka manual, repetitive kaam automatically handle hota hai — jisse aapki team higher-value kaam par focus kar sakti hai."
+      }
+    ]
+  },
+  "portfolio": {
+    "pageTitle": "Hamara Kaam",
+    "sectionSubtitle": "Hamare projects aur deliverables ka ek selection.",
+    "empty": "Naya kaam jald hi add kiya ja raha hai — thodi der baad check karein.",
+    "watchVideo": "Video Dekhein"
+  },
+  "contact": {
+    "pageTitle": "Contact Karein",
+    "sectionSubtitle": "Koi project hai dimaag mein? Reach out karein aur baat karte hain.",
+    "formName": "Aapka Naam",
+    "formEmail": "Aapka Email",
+    "formMessage": "Aapka Message",
+    "formSubmit": "Message Bhejein",
+    "formSending": "Bheja Ja Raha Hai...",
+    "formSuccess": "Dhanyawaad! Aapka message bhej diya gaya hai — hum jald hi aapse contact karenge.",
+    "formError": "Kuch galat ho gaya. Please dobara try karein ya seedhe humein email karein.",
+    "directEmail": "Seedhe Humein Email Karein",
+    "addressTitle": "Hamara Address",
+    "connectTitle": "Humse Judein",
+    "whatsapp": "WhatsApp",
+    "linkedin": "LinkedIn"
+  },
+  "gallery": {
+    "pageTitle": "Gallery",
+    "sectionSubtitle": "Hamare kaam, hamare tools, aur unke peeche ke moments ki ek jhalak.",
+    "empty": "Photos jald hi add ki ja rahi hain — thodi der baad check karein."
+  },
+  "clients": {
+    "pageTitle": "Hamare Clients",
+    "sectionSubtitle": "Wo businesses jinka saath dekar humein garv hai.",
+    "empty": "Clients ki details jald hi yahan dikhengi."
+  },
+  "updates": {
+    "tipLabel": "Tip",
+    "updateLabel": "Update"
+  },
+  "footer": {
+    "companyName": "Visionary Masters Global Pvt Ltd",
+    "tagline": "18 Saal Ka Real-World Experience. Ab AI Ke Saath.",
+    "quickLinks": "Quick Links",
+    "contactInfo": "Contact Info",
+    "rightsReserved": "All rights reserved."
+  }
+}
