@@ -41,11 +41,14 @@ type ServiceItem = {
 export default function ServiceCard({ item }: { item: ServiceItem }) {
   const { t } = useLanguage();
   const [expanded, setExpanded] = useState(false);
+  // Sample images are dropped into /public/images later. Until a file is there,
+  // hide the image strip entirely rather than showing a broken-image box.
+  const [imageFailed, setImageFailed] = useState(false);
   const Icon = ICONS[item.id] ?? Mail;
 
   return (
     <div className="flex flex-col overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm hover:shadow-md transition-shadow">
-      {item.image && (
+      {item.image && !imageFailed && (
         <div className="relative h-44 w-full bg-slate-100">
           <Image
             src={`/images/${item.image}`}
@@ -53,6 +56,7 @@ export default function ServiceCard({ item }: { item: ServiceItem }) {
             fill
             sizes="(max-width: 768px) 100vw, 400px"
             className="object-cover"
+            onError={() => setImageFailed(true)}
           />
         </div>
       )}

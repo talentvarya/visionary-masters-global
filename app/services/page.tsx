@@ -13,6 +13,7 @@ export default function ServicesPage() {
   const { t, language } = useLanguage();
   const [posts, setPosts] = useState<PortfolioPost[]>([]);
   const [loadingPosts, setLoadingPosts] = useState(true);
+  const [aiImageFailed, setAiImageFailed] = useState(false);
 
   useEffect(() => {
     const supabase = createClient();
@@ -44,20 +45,29 @@ export default function ServicesPage() {
       </section>
 
       <section className="bg-slate-50 py-14">
-        <div className="mx-auto grid max-w-6xl items-center gap-8 px-4 sm:grid-cols-2 sm:px-6 lg:px-8">
-          <div>
+        <div
+          className={`mx-auto grid max-w-6xl items-center gap-8 px-4 sm:px-6 lg:px-8 ${
+            aiImageFailed ? "" : "sm:grid-cols-2"
+          }`}
+        >
+          <div className={aiImageFailed ? "mx-auto max-w-3xl text-center" : ""}>
             <h2 className="text-2xl font-bold text-navy">{t.services.aiCapabilitiesTitle}</h2>
             <p className="mt-4 leading-relaxed text-slate-600">{t.services.aiCapabilitiesBody}</p>
           </div>
-          <div className="relative h-64 w-full overflow-hidden rounded-xl bg-slate-200 sm:h-72">
-            <Image
-              src="/images/ai-image-generation-sample.png"
-              alt="AI image generation sample"
-              fill
-              sizes="(max-width: 768px) 100vw, 500px"
-              className="object-cover"
-            />
-          </div>
+          {/* Sample image is added to /public/images later — until then this
+              collapses so the section stays centred instead of half empty. */}
+          {!aiImageFailed && (
+            <div className="relative h-64 w-full overflow-hidden rounded-xl bg-slate-200 sm:h-72">
+              <Image
+                src="/images/ai-image-generation-sample.png"
+                alt="AI image generation sample"
+                fill
+                sizes="(max-width: 768px) 100vw, 500px"
+                className="object-cover"
+                onError={() => setAiImageFailed(true)}
+              />
+            </div>
+          )}
         </div>
       </section>
 
