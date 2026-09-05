@@ -322,7 +322,48 @@ create policy "Site admins can delete service images"
   to authenticated
   using (public.is_site_admin());
 
--- 7. Storage buckets (public read, admin-only writes) ----------------------
+-- 7. Editable site text ------------------------------------------------------
+-- Every visible string on the site lives in locales/*.json as the default.
+-- A row here overrides one of those strings for one language, so copy can be
+-- reworded from the admin (for SEO or otherwise) without a code change.
+-- `content_key` is the dotted path into the locale file, e.g.
+-- 'home.heroTagline' or 'services.items.1.outcome'.
+create table if not exists public.site_content (
+  content_key text not null,
+  language text not null check (language in ('en', 'hi', 'hinglish', 'pa')),
+  value text not null,
+  updated_at timestamptz not null default now(),
+  primary key (content_key, language)
+);
+
+alter table public.site_content enable row level security;
+
+drop policy if exists "Public can read site content" on public.site_content;
+create policy "Public can read site content"
+  on public.site_content for select
+  to anon, authenticated
+  using (true);
+
+drop policy if exists "Site admins can insert site content" on public.site_content;
+create policy "Site admins can insert site content"
+  on public.site_content for insert
+  to authenticated
+  with check (public.is_site_admin());
+
+drop policy if exists "Site admins can update site content" on public.site_content;
+create policy "Site admins can update site content"
+  on public.site_content for update
+  to authenticated
+  using (public.is_site_admin())
+  with check (public.is_site_admin());
+
+drop policy if exists "Site admins can delete site content" on public.site_content;
+create policy "Site admins can delete site content"
+  on public.site_content for delete
+  to authenticated
+  using (public.is_site_admin());
+
+-- 8. Storage buckets (public read, admin-only writes) ----------------------
 insert into storage.buckets (id, name, public)
 values ('portfolio-images', 'portfolio-images', true)
 on conflict (id) do nothing;

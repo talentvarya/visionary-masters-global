@@ -12,6 +12,7 @@ import SlidesManager from "./SlidesManager";
 import GalleryManager from "./GalleryManager";
 import ClientsManager from "./ClientsManager";
 import ServiceImagesManager from "./ServiceImagesManager";
+import SiteTextManager from "./SiteTextManager";
 
 export default function AdminDashboardPage() {
   const router = useRouter();
@@ -141,6 +142,10 @@ export default function AdminDashboardPage() {
 
       <div className="mt-10">
         <SlidesManager session={session} />
+      </div>
+
+      <div className="mt-10">
+        <SiteTextManager />
       </div>
 
       <div className="mt-10">
