@@ -152,6 +152,39 @@ alter table public.home_slides add column if not exists body_pa text;
 -- screenshot) with no title/description text overlaid on the card.
 alter table public.home_slides add column if not exists image_only boolean not null default false;
 
+-- Per-slide presentation options set from the admin.
+-- image_fit: 'contain' shows the whole image (nothing cropped), 'cover' fills
+-- the card and crops the overflow.
+alter table public.home_slides add column if not exists image_fit text not null default 'contain';
+alter table public.home_slides add column if not exists title_size text not null default 'medium';
+alter table public.home_slides add column if not exists title_font text not null default 'sans';
+alter table public.home_slides add column if not exists body_size text not null default 'medium';
+alter table public.home_slides add column if not exists body_font text not null default 'sans';
+
+do $$
+begin
+  if not exists (select 1 from pg_constraint where conname = 'home_slides_image_fit_check') then
+    alter table public.home_slides
+      add constraint home_slides_image_fit_check check (image_fit in ('contain', 'cover'));
+  end if;
+  if not exists (select 1 from pg_constraint where conname = 'home_slides_title_size_check') then
+    alter table public.home_slides
+      add constraint home_slides_title_size_check check (title_size in ('small', 'medium', 'large'));
+  end if;
+  if not exists (select 1 from pg_constraint where conname = 'home_slides_body_size_check') then
+    alter table public.home_slides
+      add constraint home_slides_body_size_check check (body_size in ('small', 'medium', 'large'));
+  end if;
+  if not exists (select 1 from pg_constraint where conname = 'home_slides_title_font_check') then
+    alter table public.home_slides
+      add constraint home_slides_title_font_check check (title_font in ('sans', 'serif', 'mono'));
+  end if;
+  if not exists (select 1 from pg_constraint where conname = 'home_slides_body_font_check') then
+    alter table public.home_slides
+      add constraint home_slides_body_font_check check (body_font in ('sans', 'serif', 'mono'));
+  end if;
+end $$;
+
 alter table public.home_slides enable row level security;
 
 drop policy if exists "Public can read active home slides" on public.home_slides;

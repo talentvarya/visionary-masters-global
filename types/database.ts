@@ -42,9 +42,19 @@ export type HomeSlide = {
   link_url: string | null;
   /** Screenshot mode: show only the image, no title/description text on the card. */
   image_only: boolean;
+  /** 'contain' shows the whole image; 'cover' fills the card and crops. */
+  image_fit: ImageFit;
+  title_size: TextSize;
+  title_font: FontChoice;
+  body_size: TextSize;
+  body_font: FontChoice;
   is_active: boolean;
   created_at: string;
 };
+
+export type ImageFit = "contain" | "cover";
+export type TextSize = "small" | "medium" | "large";
+export type FontChoice = "sans" | "serif" | "mono";
 
 export type HomeSlideInsert = Omit<HomeSlide, "id" | "created_at">;
 

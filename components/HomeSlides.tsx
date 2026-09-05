@@ -2,43 +2,64 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import { Sparkles, Bot, Linkedin, Newspaper, ExternalLink, type LucideIcon } from "lucide-react";
+import { Linkedin, Newspaper, ExternalLink } from "lucide-react";
 import { createClient } from "@/lib/supabase/client";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
 import { localized } from "@/lib/i18n/localized";
-import type { HomeSlide, SlideTopic } from "@/types/database";
+import { ClaudeIcon, OpenAIIcon } from "@/components/BrandIcons";
+import type { HomeSlide, SlideTopic, TextSize, FontChoice } from "@/types/database";
 
 const SECONDS_PER_SLIDE = 6;
 const MIN_SLIDES_IN_TRACK = 5;
 
+type IconComponent = (props: { size?: number; className?: string }) => JSX.Element;
+
 const TOPIC_STYLES: Record<
   SlideTopic,
-  { label: string; icon: LucideIcon; chip: string; ring: string }
+  { label: string; icon: IconComponent; chip: string; ring: string }
 > = {
   claude: {
     label: "Claude",
-    icon: Sparkles,
+    icon: ClaudeIcon,
     chip: "bg-[#D97757] text-white",
     ring: "ring-[#D97757]/40",
   },
   chatgpt: {
     label: "ChatGPT",
-    icon: Bot,
+    icon: OpenAIIcon,
     chip: "bg-[#10A37F] text-white",
     ring: "ring-[#10A37F]/40",
   },
   linkedin: {
     label: "LinkedIn",
-    icon: Linkedin,
+    icon: Linkedin as IconComponent,
     chip: "bg-[#0A66C2] text-white",
     ring: "ring-[#0A66C2]/40",
   },
   news: {
     label: "News",
-    icon: Newspaper,
+    icon: Newspaper as IconComponent,
     chip: "bg-accent text-navy",
     ring: "ring-accent/40",
   },
+};
+
+const TITLE_SIZES: Record<TextSize, string> = {
+  small: "text-xs",
+  medium: "text-sm",
+  large: "text-base",
+};
+
+const BODY_SIZES: Record<TextSize, string> = {
+  small: "text-[11px]",
+  medium: "text-xs",
+  large: "text-sm",
+};
+
+const FONTS: Record<FontChoice, string> = {
+  sans: "",
+  serif: "font-serif",
+  mono: "font-mono",
 };
 
 function SlideCard({ slide }: { slide: HomeSlide }) {
@@ -47,6 +68,13 @@ function SlideCard({ slide }: { slide: HomeSlide }) {
   const Icon = style.icon;
   const title = localized(slide, "title", language);
   const body = localized(slide, "body", language);
+  const fitClass = slide.image_fit === "cover" ? "object-cover" : "object-contain";
+  const titleClass = `${TITLE_SIZES[slide.title_size] ?? TITLE_SIZES.medium} ${
+    FONTS[slide.title_font] ?? ""
+  }`;
+  const bodyClass = `${BODY_SIZES[slide.body_size] ?? BODY_SIZES.medium} ${
+    FONTS[slide.body_font] ?? ""
+  }`;
 
   // Screenshot mode: the image is the whole card — no title/description text
   // laid over it, and shown uncropped so small on-screen text stays readable.
@@ -77,7 +105,7 @@ function SlideCard({ slide }: { slide: HomeSlide }) {
           alt={title ?? style.label}
           fill
           sizes="(max-width: 640px) 80vw, 28vw"
-          className="object-contain p-2"
+          className={`${fitClass} ${slide.image_fit === "cover" ? "" : "p-2"}`}
         />
       </div>
     );
@@ -102,7 +130,7 @@ function SlideCard({ slide }: { slide: HomeSlide }) {
             alt=""
             fill
             sizes="(max-width: 640px) 80vw, 28vw"
-            className="object-cover"
+            className={fitClass}
           />
         </div>
       )}
@@ -113,9 +141,9 @@ function SlideCard({ slide }: { slide: HomeSlide }) {
           <Icon size={12} />
           {style.label}
         </span>
-        <h3 className="mt-2.5 line-clamp-2 text-sm font-bold text-navy">{title}</h3>
+        <h3 className={`mt-2.5 line-clamp-2 font-bold text-navy ${titleClass}`}>{title}</h3>
         {body && (
-          <p className="mt-1.5 line-clamp-3 text-xs leading-relaxed text-slate-600">{body}</p>
+          <p className={`mt-1.5 line-clamp-3 leading-relaxed text-slate-600 ${bodyClass}`}>{body}</p>
         )}
         {slide.link_url && (
           <span className="mt-auto flex items-center gap-1 pt-2.5 text-xs font-semibold text-navy">

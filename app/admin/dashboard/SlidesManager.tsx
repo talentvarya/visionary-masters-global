@@ -2,19 +2,46 @@
 
 import { useEffect, useState, type FormEvent } from "react";
 import type { Session } from "@supabase/supabase-js";
-import { Trash2, Sparkles, Bot, Linkedin, Newspaper, type LucideIcon } from "lucide-react";
+import { Trash2, Linkedin, Newspaper, X } from "lucide-react";
 import { createClient } from "@/lib/supabase/client";
 import { uploadWithProgress } from "@/lib/supabase/uploadWithProgress";
-import type { HomeSlide, SlideTopic } from "@/types/database";
+import { ClaudeIcon, OpenAIIcon } from "@/components/BrandIcons";
+import type {
+  HomeSlide,
+  SlideTopic,
+  ImageFit,
+  TextSize,
+  FontChoice,
+} from "@/types/database";
 
 const IMAGE_BUCKET = "portfolio-images";
+const RECOMMENDED_SIZE = "Recommended: about 800 × 500 px (landscape), under 2 MB. PNG or JPG.";
 
-const TOPICS: { value: SlideTopic; label: string; icon: LucideIcon; color: string }[] = [
-  { value: "claude", label: "Claude (tips & skills)", icon: Sparkles, color: "text-[#D97757]" },
-  { value: "chatgpt", label: "ChatGPT (tips & skills)", icon: Bot, color: "text-[#10A37F]" },
-  { value: "linkedin", label: "LinkedIn post", icon: Linkedin, color: "text-[#0A66C2]" },
-  { value: "news", label: "News update", icon: Newspaper, color: "text-accent" },
+type IconComponent = (props: { size?: number; className?: string }) => JSX.Element;
+
+const TOPICS: { value: SlideTopic; label: string; icon: IconComponent; color: string }[] = [
+  { value: "claude", label: "Claude (tips & skills)", icon: ClaudeIcon, color: "text-[#D97757]" },
+  { value: "chatgpt", label: "ChatGPT (tips & skills)", icon: OpenAIIcon, color: "text-[#10A37F]" },
+  { value: "linkedin", label: "LinkedIn post", icon: Linkedin as IconComponent, color: "text-[#0A66C2]" },
+  { value: "news", label: "News update", icon: Newspaper as IconComponent, color: "text-accent" },
 ];
+
+const SIZE_OPTIONS: { value: TextSize; label: string }[] = [
+  { value: "small", label: "Small" },
+  { value: "medium", label: "Medium" },
+  { value: "large", label: "Large" },
+];
+
+const FONT_OPTIONS: { value: FontChoice; label: string }[] = [
+  { value: "sans", label: "Default (clean)" },
+  { value: "serif", label: "Serif (classic)" },
+  { value: "mono", label: "Mono (technical)" },
+];
+
+function formatFileSize(bytes: number) {
+  if (bytes < 1024 * 1024) return `${Math.round(bytes / 1024)} KB`;
+  return `${(bytes / (1024 * 1024)).toFixed(1)} MB`;
+}
 
 export default function SlidesManager({ session }: { session: Session }) {
   const [slides, setSlides] = useState<HomeSlide[]>([]);
@@ -31,9 +58,23 @@ export default function SlidesManager({ session }: { session: Session }) {
   const [titlePa, setTitlePa] = useState("");
   const [bodyPa, setBodyPa] = useState("");
   const [imageFile, setImageFile] = useState<File | null>(null);
+  const [imageFit, setImageFit] = useState<ImageFit>("contain");
+  const [titleSize, setTitleSize] = useState<TextSize>("medium");
+  const [titleFont, setTitleFont] = useState<FontChoice>("sans");
+  const [bodySize, setBodySize] = useState<TextSize>("medium");
+  const [bodyFont, setBodyFont] = useState<FontChoice>("sans");
   const [progress, setProgress] = useState(0);
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  // Lets the file input be cleared by remounting it — inputs keep their value
+  // otherwise, so "Remove" alone wouldn't visibly reset the chooser.
+  const [fileInputKey, setFileInputKey] = useState(0);
+
+  function clearImage() {
+    setImageFile(null);
+    setProgress(0);
+    setFileInputKey((k) => k + 1);
+  }
 
   async function loadSlides() {
     const supabase = createClient();
@@ -90,6 +131,11 @@ export default function SlidesManager({ session }: { session: Session }) {
         image_url: imageUrl,
         link_url: linkUrl || null,
         image_only: imageOnly,
+        image_fit: imageFit,
+        title_size: titleSize,
+        title_font: titleFont,
+        body_size: bodySize,
+        body_font: bodyFont,
         is_active: true,
       });
       if (insertError) throw insertError;
@@ -105,8 +151,12 @@ export default function SlidesManager({ session }: { session: Session }) {
       setBodyPa("");
       setShowTranslations(false);
       setImageOnly(false);
-      setImageFile(null);
-      setProgress(0);
+      setImageFit("contain");
+      setTitleSize("medium");
+      setTitleFont("sans");
+      setBodySize("medium");
+      setBodyFont("sans");
+      clearImage();
       loadSlides();
     } catch (err) {
       setError(err instanceof Error ? err.message : "Could not save slide");
@@ -211,6 +261,7 @@ export default function SlidesManager({ session }: { session: Session }) {
               Image {imageOnly ? "" : "(optional)"}
             </label>
             <input
+              key={fileInputKey}
               type="file"
               accept="image/*"
               onChange={(e) => setImageFile(e.target.files?.[0] ?? null)}
@@ -218,6 +269,23 @@ export default function SlidesManager({ session }: { session: Session }) {
                 imageOnly ? "border-2 border-dashed border-navy/40 bg-navy/5 p-2" : ""
               }`}
             />
+            <p className="mt-1 text-xs text-slate-500">{RECOMMENDED_SIZE}</p>
+
+            {imageFile && (
+              <div className="mt-2 flex items-center justify-between gap-2 rounded-md bg-slate-100 px-2 py-1.5">
+                <span className="min-w-0 truncate text-xs text-slate-600">
+                  {imageFile.name} · {formatFileSize(imageFile.size)}
+                </span>
+                <button
+                  type="button"
+                  onClick={clearImage}
+                  className="flex shrink-0 items-center gap-1 rounded border border-slate-300 bg-white px-2 py-0.5 text-xs font-medium text-slate-600 hover:bg-slate-50"
+                >
+                  <X size={12} /> Remove
+                </button>
+              </div>
+            )}
+
             {imageFile && progress > 0 && progress < 100 && (
               <div className="mt-1 h-1.5 w-full rounded-full bg-slate-200">
                 <div className="h-1.5 rounded-full bg-navy" style={{ width: `${progress}%` }} />
@@ -225,6 +293,88 @@ export default function SlidesManager({ session }: { session: Session }) {
             )}
           </div>
         </div>
+
+        {imageFile && (
+          <div>
+            <label className="block text-sm font-medium text-slate-700">How should it fit?</label>
+            <select
+              value={imageFit}
+              onChange={(e) => setImageFit(e.target.value as ImageFit)}
+              className="mt-1 w-full rounded-md border border-slate-300 px-3 py-2 text-sm focus:border-navy focus:outline-none focus:ring-1 focus:ring-navy sm:max-w-sm"
+            >
+              <option value="contain">Fit whole image (nothing cropped)</option>
+              <option value="cover">Fill the card (edges cropped)</option>
+            </select>
+            <p className="mt-1 text-xs text-slate-500">
+              Screenshots read better with &quot;fit whole image&quot;; photos usually look better
+              filling the card.
+            </p>
+          </div>
+        )}
+
+        {!imageOnly && (
+          <div className="rounded-md border border-slate-200 bg-slate-50 p-3">
+            <p className="text-sm font-medium text-slate-700">Text style</p>
+            <div className="mt-3 grid gap-3 sm:grid-cols-2">
+              <div>
+                <label className="block text-xs font-semibold uppercase tracking-wide text-slate-500">
+                  Title size
+                </label>
+                <select
+                  value={titleSize}
+                  onChange={(e) => setTitleSize(e.target.value as TextSize)}
+                  className="mt-1 w-full rounded-md border border-slate-300 px-3 py-2 text-sm focus:border-navy focus:outline-none focus:ring-1 focus:ring-navy"
+                >
+                  {SIZE_OPTIONS.map((o) => (
+                    <option key={o.value} value={o.value}>{o.label}</option>
+                  ))}
+                </select>
+              </div>
+              <div>
+                <label className="block text-xs font-semibold uppercase tracking-wide text-slate-500">
+                  Title font
+                </label>
+                <select
+                  value={titleFont}
+                  onChange={(e) => setTitleFont(e.target.value as FontChoice)}
+                  className="mt-1 w-full rounded-md border border-slate-300 px-3 py-2 text-sm focus:border-navy focus:outline-none focus:ring-1 focus:ring-navy"
+                >
+                  {FONT_OPTIONS.map((o) => (
+                    <option key={o.value} value={o.value}>{o.label}</option>
+                  ))}
+                </select>
+              </div>
+              <div>
+                <label className="block text-xs font-semibold uppercase tracking-wide text-slate-500">
+                  Description size
+                </label>
+                <select
+                  value={bodySize}
+                  onChange={(e) => setBodySize(e.target.value as TextSize)}
+                  className="mt-1 w-full rounded-md border border-slate-300 px-3 py-2 text-sm focus:border-navy focus:outline-none focus:ring-1 focus:ring-navy"
+                >
+                  {SIZE_OPTIONS.map((o) => (
+                    <option key={o.value} value={o.value}>{o.label}</option>
+                  ))}
+                </select>
+              </div>
+              <div>
+                <label className="block text-xs font-semibold uppercase tracking-wide text-slate-500">
+                  Description font
+                </label>
+                <select
+                  value={bodyFont}
+                  onChange={(e) => setBodyFont(e.target.value as FontChoice)}
+                  className="mt-1 w-full rounded-md border border-slate-300 px-3 py-2 text-sm focus:border-navy focus:outline-none focus:ring-1 focus:ring-navy"
+                >
+                  {FONT_OPTIONS.map((o) => (
+                    <option key={o.value} value={o.value}>{o.label}</option>
+                  ))}
+                </select>
+              </div>
+            </div>
+          </div>
+        )}
 
         {!imageOnly && (
         <div className="rounded-md border border-slate-200 bg-slate-50 p-3">
