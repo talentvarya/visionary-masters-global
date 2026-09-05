@@ -7,16 +7,18 @@ import { languageFontClass } from "@/lib/i18n/translations";
 import { createClient } from "@/lib/supabase/client";
 import ServiceCard from "@/components/ServiceCard";
 import PortfolioCard from "@/components/PortfolioCard";
-import type { PortfolioPost } from "@/types/database";
+import type { PortfolioPost, ServiceImage } from "@/types/database";
 
 export default function ServicesPage() {
   const { t, language } = useLanguage();
   const [posts, setPosts] = useState<PortfolioPost[]>([]);
   const [loadingPosts, setLoadingPosts] = useState(true);
   const [aiImageFailed, setAiImageFailed] = useState(false);
+  const [serviceImages, setServiceImages] = useState<Record<string, string>>({});
 
   useEffect(() => {
     const supabase = createClient();
+
     supabase
       .from("portfolio_posts")
       .select("*")
@@ -24,6 +26,18 @@ export default function ServicesPage() {
       .then(({ data }) => {
         setPosts(data ?? []);
         setLoadingPosts(false);
+      });
+
+    supabase
+      .from("service_images")
+      .select("*")
+      .eq("is_active", true)
+      .then(({ data }) => {
+        const map: Record<string, string> = {};
+        (data as ServiceImage[] | null)?.forEach((row) => {
+          map[row.service_id] = row.image_url;
+        });
+        setServiceImages(map);
       });
   }, []);
 
@@ -39,7 +53,7 @@ export default function ServicesPage() {
       <section className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {t.services.items.map((item) => (
-            <ServiceCard key={item.id} item={item} />
+            <ServiceCard key={item.id} item={item} watermarkUrl={serviceImages[item.id] ?? null} />
           ))}
         </div>
       </section>

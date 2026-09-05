@@ -252,7 +252,44 @@ create policy "Site admins can delete clients"
   to authenticated
   using (public.is_site_admin());
 
--- 6. Storage buckets (public read, admin-only writes) ----------------------
+-- 6. Service card watermark images -----------------------------------------
+-- One optional image per service card. service_id matches the `id` of the
+-- entries in locales/*.json -> services.items (e.g. 'powerbi-dashboards').
+create table if not exists public.service_images (
+  service_id text primary key,
+  image_url text not null,
+  is_active boolean not null default true,
+  updated_at timestamptz not null default now()
+);
+
+alter table public.service_images enable row level security;
+
+drop policy if exists "Public can read active service images" on public.service_images;
+create policy "Public can read active service images"
+  on public.service_images for select
+  to anon, authenticated
+  using (is_active = true or public.is_site_admin());
+
+drop policy if exists "Site admins can insert service images" on public.service_images;
+create policy "Site admins can insert service images"
+  on public.service_images for insert
+  to authenticated
+  with check (public.is_site_admin());
+
+drop policy if exists "Site admins can update service images" on public.service_images;
+create policy "Site admins can update service images"
+  on public.service_images for update
+  to authenticated
+  using (public.is_site_admin())
+  with check (public.is_site_admin());
+
+drop policy if exists "Site admins can delete service images" on public.service_images;
+create policy "Site admins can delete service images"
+  on public.service_images for delete
+  to authenticated
+  using (public.is_site_admin());
+
+-- 7. Storage buckets (public read, admin-only writes) ----------------------
 insert into storage.buckets (id, name, public)
 values ('portfolio-images', 'portfolio-images', true)
 on conflict (id) do nothing;

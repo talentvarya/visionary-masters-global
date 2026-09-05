@@ -11,6 +11,7 @@ import UpdatesManager from "./UpdatesManager";
 import SlidesManager from "./SlidesManager";
 import GalleryManager from "./GalleryManager";
 import ClientsManager from "./ClientsManager";
+import ServiceImagesManager from "./ServiceImagesManager";
 
 export default function AdminDashboardPage() {
   const router = useRouter();
@@ -140,6 +141,10 @@ export default function AdminDashboardPage() {
 
       <div className="mt-10">
         <SlidesManager session={session} />
+      </div>
+
+      <div className="mt-10">
+        <ServiceImagesManager session={session} />
       </div>
 
       <div className="mt-10">

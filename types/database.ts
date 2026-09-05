@@ -56,6 +56,14 @@ export type GalleryImage = {
   created_at: string;
 };
 
+export type ServiceImage = {
+  /** Matches services.items[].id in the locale files. */
+  service_id: string;
+  image_url: string;
+  is_active: boolean;
+  updated_at: string;
+};
+
 export type Client = {
   id: string;
   name: string;

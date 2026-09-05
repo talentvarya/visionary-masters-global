@@ -38,30 +38,43 @@ type ServiceItem = {
   outcome: string;
 };
 
-export default function ServiceCard({ item }: { item: ServiceItem }) {
+export default function ServiceCard({
+  item,
+  watermarkUrl,
+}: {
+  item: ServiceItem;
+  /** Uploaded from the admin; falls back to the sample file in /public/images. */
+  watermarkUrl?: string | null;
+}) {
   const { t } = useLanguage();
   const [expanded, setExpanded] = useState(false);
-  // Sample images are dropped into /public/images later. Until a file is there,
-  // hide the image strip entirely rather than showing a broken-image box.
+  // The /public/images sample files may not exist yet — drop the watermark on
+  // load failure rather than showing a broken image.
   const [imageFailed, setImageFailed] = useState(false);
   const Icon = ICONS[item.id] ?? Mail;
 
+  const imageSrc = watermarkUrl ?? (item.image ? `/images/${item.image}` : null);
+  const showWatermark = Boolean(imageSrc) && !imageFailed;
+
   return (
-    <div className="flex flex-col overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm hover:shadow-md transition-shadow">
-      {item.image && !imageFailed && (
-        <div className="relative h-44 w-full bg-slate-100">
+    <div className="relative flex flex-col overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm hover:shadow-md transition-shadow">
+      {showWatermark && imageSrc && (
+        // Watermark: a faint full-bleed wash behind the card, with a white
+        // gradient over it so the text keeps its contrast.
+        <div className="pointer-events-none absolute inset-0 select-none" aria-hidden="true">
           <Image
-            src={`/images/${item.image}`}
-            alt={item.title}
+            src={imageSrc}
+            alt=""
             fill
             sizes="(max-width: 768px) 100vw, 400px"
-            className="object-cover"
+            className="object-cover opacity-30"
             onError={() => setImageFailed(true)}
           />
+          <div className="absolute inset-0 bg-gradient-to-br from-white/85 via-white/60 to-white/40" />
         </div>
       )}
 
-      <div className="flex flex-1 flex-col p-5">
+      <div className="relative flex flex-1 flex-col p-5">
         <div className="flex items-start justify-between gap-2">
           <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-navy/10 text-navy">
             <Icon size={20} />
