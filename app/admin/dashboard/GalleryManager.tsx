@@ -5,7 +5,7 @@ import Image from "next/image";
 import type { Session } from "@supabase/supabase-js";
 import { Trash2 } from "lucide-react";
 import { createClient } from "@/lib/supabase/client";
-import { uploadWithProgress } from "@/lib/supabase/uploadWithProgress";
+import { uploadWithProgress, safeStorageName } from "@/lib/supabase/uploadWithProgress";
 import type { GalleryImage } from "@/types/database";
 
 const IMAGE_BUCKET = "portfolio-images";
@@ -46,7 +46,7 @@ export default function GalleryManager({ session }: { session: Session }) {
         setUploadingIndex(i + 1);
         setProgress(0);
 
-        const path = `gallery/${Date.now()}-${file.name.replace(/\s+/g, "-")}`;
+        const path = `gallery/${Date.now()}-${safeStorageName(file.name)}`;
         await uploadWithProgress(IMAGE_BUCKET, path, file, session, setProgress);
         const imageUrl = supabase.storage.from(IMAGE_BUCKET).getPublicUrl(path).data.publicUrl;
 

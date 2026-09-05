@@ -4,7 +4,7 @@ import { useEffect, useState, type FormEvent } from "react";
 import type { Session } from "@supabase/supabase-js";
 import { Trash2, Linkedin, Newspaper, X } from "lucide-react";
 import { createClient } from "@/lib/supabase/client";
-import { uploadWithProgress } from "@/lib/supabase/uploadWithProgress";
+import { uploadWithProgress, safeStorageName } from "@/lib/supabase/uploadWithProgress";
 import { ClaudeIcon, OpenAIIcon } from "@/components/BrandIcons";
 import type {
   HomeSlide,
@@ -109,7 +109,7 @@ export default function SlidesManager({ session }: { session: Session }) {
       let imageUrl: string | null = null;
 
       if (imageFile) {
-        const path = `slides/${Date.now()}-${imageFile.name.replace(/\s+/g, "-")}`;
+        const path = `slides/${Date.now()}-${safeStorageName(imageFile.name)}`;
         await uploadWithProgress(IMAGE_BUCKET, path, imageFile, session, setProgress);
         imageUrl = supabase.storage.from(IMAGE_BUCKET).getPublicUrl(path).data.publicUrl;
       }

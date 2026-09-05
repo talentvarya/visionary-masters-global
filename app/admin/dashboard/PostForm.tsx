@@ -3,7 +3,7 @@
 import { useState, type FormEvent } from "react";
 import type { Session } from "@supabase/supabase-js";
 import { createClient } from "@/lib/supabase/client";
-import { uploadWithProgress } from "@/lib/supabase/uploadWithProgress";
+import { uploadWithProgress, safeStorageName } from "@/lib/supabase/uploadWithProgress";
 import type { PortfolioPost } from "@/types/database";
 
 const IMAGE_BUCKET = "portfolio-images";
@@ -42,13 +42,13 @@ export default function PostForm({ session, editingPost, onSaved, onCancel }: Pr
       let videoUrl = editingPost?.video_url ?? null;
 
       if (imageFile) {
-        const path = `${Date.now()}-${imageFile.name.replace(/\s+/g, "-")}`;
+        const path = `${Date.now()}-${safeStorageName(imageFile.name)}`;
         await uploadWithProgress(IMAGE_BUCKET, path, imageFile, session, setImageProgress);
         imageUrl = supabase.storage.from(IMAGE_BUCKET).getPublicUrl(path).data.publicUrl;
       }
 
       if (videoFile) {
-        const path = `${Date.now()}-${videoFile.name.replace(/\s+/g, "-")}`;
+        const path = `${Date.now()}-${safeStorageName(videoFile.name)}`;
         await uploadWithProgress(VIDEO_BUCKET, path, videoFile, session, setVideoProgress);
         videoUrl = supabase.storage.from(VIDEO_BUCKET).getPublicUrl(path).data.publicUrl;
       }

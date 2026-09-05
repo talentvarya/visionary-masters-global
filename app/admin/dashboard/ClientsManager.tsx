@@ -5,7 +5,7 @@ import Image from "next/image";
 import type { Session } from "@supabase/supabase-js";
 import { Trash2, Building2 } from "lucide-react";
 import { createClient } from "@/lib/supabase/client";
-import { uploadWithProgress } from "@/lib/supabase/uploadWithProgress";
+import { uploadWithProgress, safeStorageName } from "@/lib/supabase/uploadWithProgress";
 import type { Client } from "@/types/database";
 
 const IMAGE_BUCKET = "portfolio-images";
@@ -43,7 +43,7 @@ export default function ClientsManager({ session }: { session: Session }) {
       let logoUrl: string | null = null;
 
       if (logoFile) {
-        const path = `clients/${Date.now()}-${logoFile.name.replace(/\s+/g, "-")}`;
+        const path = `clients/${Date.now()}-${safeStorageName(logoFile.name)}`;
         await uploadWithProgress(IMAGE_BUCKET, path, logoFile, session, setProgress);
         logoUrl = supabase.storage.from(IMAGE_BUCKET).getPublicUrl(path).data.publicUrl;
       }
