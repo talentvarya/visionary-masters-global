@@ -84,29 +84,36 @@ function SlideCard({ slide }: { slide: HomeSlide }) {
   if (slide.image_only && slide.image_url) {
     const screenshot = (
       <div
-        className={`relative h-full overflow-hidden rounded-xl bg-slate-900 shadow-lg ring-1 ${style.ring} transition-transform hover:scale-[1.02]`}
+        className={`flex h-full flex-col overflow-hidden rounded-xl bg-slate-900 shadow-lg ring-1 ${style.ring} transition-transform hover:scale-[1.02]`}
       >
-        <Image
-          src={slide.image_url}
-          alt=""
-          aria-hidden="true"
-          fill
-          sizes="(max-width: 640px) 80vw, 28vw"
-          className="scale-110 object-cover opacity-40 blur-xl"
-        />
-        <span
-          className={`absolute left-3 top-3 z-10 inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-bold ${style.chip}`}
-        >
-          <Icon size={12} />
-          {style.label}
-        </span>
-        <Image
-          src={slide.image_url}
-          alt={title ?? style.label}
-          fill
-          sizes="(max-width: 640px) 80vw, 28vw"
-          className={`${fitClass} ${slide.image_fit === "cover" ? "" : "p-2"}`}
-        />
+        {/* The badge sits in its own strip rather than on top of the image —
+            overlaying it covered the first line of the screenshot. */}
+        <div className="shrink-0 px-3 pb-2 pt-3">
+          <span
+            className={`inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-bold ${style.chip}`}
+          >
+            <Icon size={12} />
+            {style.label}
+          </span>
+        </div>
+
+        <div className="relative flex-1 overflow-hidden">
+          <Image
+            src={slide.image_url}
+            alt=""
+            aria-hidden="true"
+            fill
+            sizes="(max-width: 640px) 80vw, 28vw"
+            className="scale-110 object-cover opacity-40 blur-xl"
+          />
+          <Image
+            src={slide.image_url}
+            alt={title ?? style.label}
+            fill
+            sizes="(max-width: 640px) 80vw, 28vw"
+            className={`${fitClass} ${slide.image_fit === "cover" ? "" : "px-2 pb-2"}`}
+          />
+        </div>
       </div>
     );
 
