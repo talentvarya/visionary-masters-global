@@ -24,6 +24,9 @@ export default function HomePage() {
           <p className="mx-auto mt-6 max-w-2xl text-base text-white/80 sm:text-lg">
             {t.home.heroIntro}
           </p>
+          <p className="mx-auto mt-4 max-w-2xl text-sm text-white/65">
+            Written and reviewed by <Link href="/about" className="font-semibold text-accent hover:text-accent-light">Vineet Grover</Link>, Founder &amp; Director, based on practical business and AI automation experience. <time dateTime="2026-09-07">Updated September 7, 2026</time>.
+          </p>
         </div>
 
         <div className="mt-10">
@@ -133,6 +136,18 @@ export default function HomePage() {
         </div>
       </section>
 
+      <section className="border-y border-slate-200 bg-white py-12">
+        <div className="mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
+          <p className="text-sm font-semibold uppercase tracking-widest text-accent">Training &amp; Trust</p>
+          <h2 className="mt-2 text-2xl font-bold text-navy">Practical AI skills backed by recognised training</h2>
+          <p className="mx-auto mt-3 max-w-2xl text-slate-600">Vineet Grover combines 18 years of live-events experience with training in AI systems, autonomous workflows, office productivity and data analytics.</p>
+          <div className="mt-6 flex flex-wrap justify-center gap-2 text-sm text-slate-700">
+            {['AI Fundamentals & Ecosystem Mastery','AI Agents & Autonomous Systems (n8n)','AI Office & Productivity Specialist','AI-Powered Data Analytics Specialist'].map((item) => <span key={item} className="rounded-full border border-slate-200 bg-slate-50 px-4 py-2">{item}</span>)}
+          </div>
+          <Link href="/about" className="mt-6 inline-flex font-semibold text-navy hover:text-accent">View qualifications and experience <ArrowRight size={16} className="ml-1" /></Link>
+        </div>
+      </section>
+
       <section className="mx-auto max-w-7xl px-4 py-16 text-center sm:px-6 lg:px-8">
         <h2 className="text-2xl font-bold text-navy sm:text-3xl">{t.home.portfolioTeaser}</h2>
         <p className="mt-2 text-slate-600">{t.home.portfolioTeaserSubtitle}</p>
@@ -143,6 +158,18 @@ export default function HomePage() {
           >
             {t.home.viewPortfolio} <ArrowRight size={16} />
           </Link>
+        </div>
+      </section>
+
+      <section className="bg-white py-16">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+          <h2 className="text-center text-2xl font-bold text-navy sm:text-3xl">Common questions</h2>
+          <div className="mt-8 grid gap-5 sm:grid-cols-2">
+            <div className="rounded-xl border border-slate-200 p-6"><h3 className="font-bold text-navy">What can you help me improve?</h3><p className="mt-2 text-sm leading-relaxed text-slate-600">I can improve customer calls, appointment handling, spreadsheet work, reporting, presentations, websites and marketing content. We start with the task that is slowing your team down.</p></div>
+            <div className="rounded-xl border border-slate-200 p-6"><h3 className="font-bold text-navy">Do I need to change my current tools?</h3><p className="mt-2 text-sm leading-relaxed text-slate-600">Usually no. I connect with the tools you already use, such as Excel, Google Sheets, Power BI, forms and messaging apps, wherever the workflow allows it.</p></div>
+            <div className="rounded-xl border border-slate-200 p-6"><h3 className="font-bold text-navy">How does a project begin?</h3><p className="mt-2 text-sm leading-relaxed text-slate-600">Send your requirement through the contact page. I will ask a few practical questions, outline the approach and confirm the scope before any build work starts.</p></div>
+            <div className="rounded-xl border border-slate-200 p-6"><h3 className="font-bold text-navy">Can you support the solution after launch?</h3><p className="mt-2 text-sm leading-relaxed text-slate-600">Yes. Handover guidance and ongoing support can be included so your team can use the solution confidently and request improvements as your needs change.</p></div>
+          </div>
         </div>
       </section>
 
