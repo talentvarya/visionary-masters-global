@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import {
   Mail,
   BarChart3,
@@ -87,7 +88,11 @@ export default function ServiceCard({
           )}
         </div>
 
-        <h3 className="mt-4 text-lg font-bold text-navy">{item.title}</h3>
+        <h3 className="mt-4 text-lg font-bold text-navy">
+          <Link href={`/services/${item.id}`} className="hover:text-accent">
+            {item.title}
+          </Link>
+        </h3>
         <p className="mt-2 text-sm text-slate-600">{item.shortDescription}</p>
 
         <button
@@ -118,6 +123,13 @@ export default function ServiceCard({
             </div>
           </div>
         )}
+
+        <Link
+          href={`/services/${item.id}`}
+          className="mt-5 inline-flex items-center text-sm font-semibold text-accent hover:text-navy"
+        >
+          View full service →
+        </Link>
       </div>
     </div>
   );
