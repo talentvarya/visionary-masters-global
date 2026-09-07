@@ -14,18 +14,66 @@
     "getInTouch": "Get in Touch"
   },
   "home": {
-    "heroTagline": "18 Saal Ka Real-World Experience. Ab AI Ke Saath.",
-    "heroIntro": "Visionary Masters Global Pvt Ltd, karib do dashak ke hands-on operational experience ko modern AI-powered business support ke saath jodta hai — hum companies ko communication, reporting aur roz ke kaam-kaaj ko traditional agencies se zyada fast aur smart tareeke se streamline karne mein madad karte hain.",
-    "ctaButton": "Get in Touch",
-    "servicesTeaser": "Hum Kya Karte Hain",
-    "servicesTeaserSubtitle": "Business ko smoothly chalane wale everyday kaam ke liye practical, AI-powered support.",
+    "heroTagline": "AI Automation Solutions Jo Aapka Time Bachayein Aur Business Grow Karein",
+    "heroIntro": "Main aapke business ke kaam ke hisaab se practical AI solutions banata hoon—calls answer aur appointments book karne wale voice assistants se lekar workflow automation, Excel solutions, Power BI dashboards aur advertising content tak.",
+    "ctaButton": "Apna Project Discuss Karein",
+    "servicesTeaser": "Main Aapke Liye Kya Bana Sakta Hoon?",
+    "servicesTeaserSubtitle": "Manual work kam karne aur daily business operations improve karne ke liye custom AI automation, data aur creative solutions.",
     "viewAllServices": "Saari Services Dekhein",
-    "aboutTeaser": "Real experience. Real discipline. Real results.",
-    "aboutTeaserBody": "Live events ki high-pressure duniya mein 18 saal bitane ke baad Vineet Grover dwara shuru kiya gaya, Visionary Masters Global usi discipline ko modern AI tools ke saath business support mein leke aata hai.",
-    "learnMore": "Aur Jaanein",
+    "aboutTeaser": "Practical AI Skills Aur Real Business Experience",
+    "aboutTeaserBody": "Main Vineet Grover, Visionary Masters Global ka founder hoon. Main 18 saal ke live-events experience ko AI systems, automation aur data analytics training ke saath jodkar clients ke liye dependable solutions banata hoon.",
+    "learnMore": "Vineet Aur Training Ke Baare Mein",
     "portfolioTeaser": "Recent Kaam",
     "portfolioTeaserSubtitle": "Hamne apne clients ke liye jo kaam kiya hai, uspar ek nazar.",
-    "viewPortfolio": "Hamara Kaam Dekhein"
+    "viewPortfolio": "Hamara Kaam Dekhein",
+    "trustPoints": [
+      {
+        "title": "Aapke Business Ke Liye",
+        "body": "Aapke process, tools aur goals ke hisaab se practical solution."
+      },
+      {
+        "title": "18 Saal Ka Experience",
+        "body": "Real operational work se aayi reliable execution."
+      },
+      {
+        "title": "Idea Se Delivery Tak",
+        "body": "Clear planning, development, testing aur support."
+      }
+    ],
+    "processEyebrow": "Simple Aur Practical Process",
+    "processTitle": "Business Problem Se Working Solution Tak",
+    "processSubtitle": "Aapko har AI tool samajhne ki zaroorat nahi. Bas woh kaam batayein jo zyada time leta hai ya behtar chalna chahiye.",
+    "processSteps": [
+      {
+        "title": "Requirement Share Karein",
+        "body": "Woh task, bottleneck ya customer experience batayein jise aap improve karna chahte hain."
+      },
+      {
+        "title": "Solution Plan Paayein",
+        "body": "Main process map karke sahi AI tools, automation aur integrations recommend karta hoon."
+      },
+      {
+        "title": "Build Aur Test",
+        "body": "Solution ko realistic business situations ke saath develop aur test kiya jata hai."
+      },
+      {
+        "title": "Launch Aur Support",
+        "body": "Aapko working solution, clear guidance aur delivery ke baad support milta hai."
+      }
+    ],
+    "exampleEyebrow": "Real-World Example",
+    "exampleTitle": "Diagnostic Lab Ke Liye AI Appointment Booking",
+    "exampleBody": "Customer call kare to AI voice assistant common questions ka jawab de sakta hai, patient details le sakta hai aur appointment book kar sakta hai. Saari information lab team ke liye Excel ya Google Sheets mein automatically organise ho sakti hai.",
+    "exampleSteps": [
+      "Customer calls answer karta hai",
+      "Aapke process se appointments book karta hai",
+      "Details spreadsheet mein bhejta hai",
+      "Team ka repetitive work kam karta hai"
+    ],
+    "exampleCta": "Aisa Solution Banwayein",
+    "finalCtaTitle": "Kya Koi Business Task Baar-Baar Karna Padta Hai? Use Automate Karein.",
+    "finalCtaBody": "Batayein aapke business mein kis kaam mein zyada time lagta hai. Main practical AI, automation ya data solution plan aur build karne mein madad karunga.",
+    "finalCtaButton": "Apni Requirement Discuss Karein"
   },
   "about": {
     "pageTitle": "Hamare Baare Mein",

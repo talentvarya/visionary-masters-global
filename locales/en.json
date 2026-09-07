@@ -14,18 +14,45 @@
     "getInTouch": "Get in Touch"
   },
   "home": {
-    "heroTagline": "18 Years of Real-World Execution. Now Powered by AI.",
-    "heroIntro": "Visionary Masters Global Pvt Ltd blends nearly two decades of hands-on operational discipline with modern AI-powered business support — helping companies streamline communication, reporting, and day-to-day operations, faster and smarter than traditional agencies.",
-    "ctaButton": "Get in Touch",
-    "servicesTeaser": "What We Do",
-    "servicesTeaserSubtitle": "Practical, AI-powered support for the everyday work that keeps a business running.",
+    "heroTagline": "AI Automation Solutions That Save Time and Help Your Business Grow",
+    "heroIntro": "I build practical AI solutions around the way your business works—from voice assistants that answer calls and book appointments to workflow automation, Excel solutions, Power BI dashboards and advertising content.",
+    "ctaButton": "Discuss Your Project",
+    "trustPoints": [
+      { "title": "Built Around Your Business", "body": "A practical solution for your process, tools and goals." },
+      { "title": "18 Years of Experience", "body": "Reliable execution shaped by real operational work." },
+      { "title": "From Idea to Delivery", "body": "Clear planning, development, testing and support." }
+    ],
+    "servicesTeaser": "What Can I Build for You?",
+    "servicesTeaserSubtitle": "Custom AI automation, data and creative solutions designed to reduce manual work and improve everyday business operations.",
     "viewAllServices": "View All Services",
-    "aboutTeaser": "Real experience. Real discipline. Real results.",
-    "aboutTeaserBody": "Founded by Vineet Grover after 18 years in the high-pressure world of live events, Visionary Masters Global brings that same discipline to business support — powered by modern AI tools.",
-    "learnMore": "Learn More",
+    "processEyebrow": "A Simple, Practical Process",
+    "processTitle": "From Your Business Problem to a Working Solution",
+    "processSubtitle": "You do not need to understand every AI tool. Start by explaining the work that takes too much time or needs to run better.",
+    "processSteps": [
+      { "title": "Share Your Requirement", "body": "Tell me about the task, bottleneck or customer experience you want to improve." },
+      { "title": "Get a Solution Plan", "body": "I map the process and recommend the right AI tools, automation and integrations." },
+      { "title": "Build and Test", "body": "Your solution is developed and tested with realistic business scenarios." },
+      { "title": "Launch and Support", "body": "You receive the working solution, clear guidance and help after delivery." }
+    ],
+    "exampleEyebrow": "Real-World Example",
+    "exampleTitle": "AI Appointment Booking for a Diagnostic Lab",
+    "exampleBody": "When a customer calls, an AI voice assistant can answer common questions, collect patient details and book an appointment. The information can then be organised automatically in Excel or Google Sheets for the lab team.",
+    "exampleSteps": [
+      "Answers incoming customer calls",
+      "Books appointments using your process",
+      "Sends organised details to a spreadsheet",
+      "Reduces repetitive work for your team"
+    ],
+    "exampleCta": "Build a Solution Like This",
+    "aboutTeaser": "Practical AI Skills Backed by Real Business Experience",
+    "aboutTeaserBody": "I’m Vineet Grover, founder of Visionary Masters Global. I combine 18 years of live-events experience with training in AI systems, automation and data analytics to build dependable solutions for clients.",
+    "learnMore": "About Vineet and His Training",
     "portfolioTeaser": "Recent Work",
     "portfolioTeaserSubtitle": "A look at what we've delivered for our clients.",
-    "viewPortfolio": "View Our Work"
+    "viewPortfolio": "View Our Work",
+    "finalCtaTitle": "Have a Repetitive Business Task? Let’s Automate It.",
+    "finalCtaBody": "Tell me what is taking too much time in your business. I’ll help you plan and build a practical AI, automation or data solution.",
+    "finalCtaButton": "Discuss Your Requirement"
   },
   "about": {
     "pageTitle": "About Us",
@@ -60,17 +87,17 @@
     "items": [
       {
         "id": "email-communication",
-        "title": "Email & Client Communication",
-        "shortDescription": "Professional email management and client correspondence that keeps every conversation fast, consistent, and polished.",
+        "title": "AI Voice Assistants & Appointment Booking",
+        "shortDescription": "Answer customer calls, collect details and book appointments with an AI voice assistant connected to your process.",
         "image": "email-template-sample.png",
-        "whatItIs": "A complete email and client-communication setup — professionally written templates, structured response workflows, and AI-assisted drafting that keeps your client conversations sharp and on-brand.",
+        "whatItIs": "A custom AI voice assistant that handles incoming calls, answers common questions, captures customer information and books appointments using your business rules.",
         "whatsIncluded": [
-          "Custom email templates for common scenarios (inquiries, follow-ups, proposals, thank-yous)",
-          "AI-assisted drafting for faster, more consistent responses",
-          "Tone and brand-voice guidelines applied across all correspondence",
-          "Organized inbox workflows and response-time tracking"
+          "Call flow designed around your customer journey",
+          "Answers for common customer questions",
+          "Appointment booking and customer-detail capture",
+          "Excel or Google Sheets record automation"
         ],
-        "outcome": "Faster response times, more professional client-facing communication, and fewer dropped follow-ups."
+        "outcome": "Customers receive a quick, consistent response while your team spends less time answering repetitive calls and entering booking details."
       },
       {
         "id": "powerbi-dashboards",
@@ -88,22 +115,22 @@
       },
       {
         "id": "mis-reporting",
-        "title": "MIS Reporting",
-        "shortDescription": "Structured Management Information System reports that keep leadership informed and decisions data-driven.",
+        "title": "ATS-Friendly Resume Builder Solutions",
+        "shortDescription": "AI-assisted resume tools that help job seekers create organised, role-specific and ATS-friendly resumes.",
         "image": "mis-report-sample.png",
-        "whatItIs": "Recurring MIS reports — daily, weekly, or monthly — that consolidate operational and financial data into a format leadership can act on immediately.",
+        "whatItIs": "A custom resume-building solution that helps job seekers organise their experience, match relevant job requirements and prepare a clean resume for applicant tracking systems.",
         "whatsIncluded": [
-          "Report structure designed around your KPIs and reporting cycle",
-          "Data consolidation from multiple departments or sources",
-          "Consistent formatting and version control",
-          "Delivery on schedule via email or shared drive"
+          "Guided collection of skills and work experience",
+          "Role-specific resume content suggestions",
+          "ATS-friendly structure and formatting",
+          "Export-ready resume output"
         ],
-        "outcome": "Leadership gets a clear, consistent picture of the business without chasing data from every department."
+        "outcome": "A faster, clearer way for job seekers to prepare relevant resumes without struggling with structure and formatting."
       },
       {
         "id": "excel-solutions",
-        "title": "Excel Solutions",
-        "shortDescription": "Custom Excel trackers, calculators, and automated workbooks built for your exact workflow.",
+        "title": "Excel Automation & MIS Reporting",
+        "shortDescription": "Custom Excel trackers, automated workbooks and recurring MIS reports built around your exact workflow.",
         "image": "excel-tracker-sample.png",
         "whatItIs": "Purpose-built Excel workbooks — trackers, calculators, inventory sheets, budget tools — designed around how your team actually works, with formulas and automation that remove manual effort.",
         "whatsIncluded": [
@@ -116,7 +143,7 @@
       },
       {
         "id": "presentations",
-        "title": "Presentations",
+        "title": "Business Presentations & Pitch Decks",
         "shortDescription": "Polished, professional presentations that communicate your message clearly and confidently.",
         "image": "presentation-slide-sample.png",
         "whatItIs": "Business presentations — pitch decks, board updates, client proposals, training material — designed for clarity and visual impact, built or refined using AI-assisted design tools.",
@@ -130,7 +157,7 @@
       },
       {
         "id": "simple-websites",
-        "title": "Simple Websites",
+        "title": "Business Websites & Landing Pages",
         "shortDescription": "Clean, fast, mobile-friendly websites for businesses that need an online presence without the overhead.",
         "image": null,
         "whatItIs": "Simple, professional websites — landing pages, small business sites, portfolio sites — built fast, mobile-responsive, and easy to maintain.",
@@ -144,8 +171,8 @@
       },
       {
         "id": "ai-video-generation",
-        "title": "AI Video Generation & Voiceover",
-        "shortDescription": "AI-generated video content and voiceovers for marketing, training, and social media.",
+        "title": "AI Ad Images, Videos & Voiceovers",
+        "shortDescription": "AI-generated advertising images, videos and voiceovers for campaigns, promotions and social media.",
         "image": "video-generation-sample.png",
         "whatItIs": "Short-form and business videos created using AI generation tools — including natural-sounding AI voiceovers — for marketing, product explainers, and internal training.",
         "whatsIncluded": [
@@ -161,7 +188,6 @@
         "title": "Workflow Automation (N8N)",
         "shortDescription": "Automated workflows that connect your tools and eliminate repetitive manual work.",
         "image": "n8n-workflow-sample.png",
-        "badge": "launchingSoon",
         "whatItIs": "Custom automation workflows built on N8N that connect your apps, forms, spreadsheets, and communication tools — so repetitive tasks run themselves.",
         "whatsIncluded": [
           "Workflow mapping to identify automation opportunities",
