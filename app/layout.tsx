@@ -61,6 +61,7 @@ export async function generateMetadata(): Promise<Metadata> {
     title,
     description,
     alternates: { canonical: "/" },
+    other: { "llms-txt": `${SITE_URL}/llms.txt` },
     openGraph: {
       type: "website",
       url: "/",
