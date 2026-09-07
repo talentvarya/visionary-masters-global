@@ -65,7 +65,7 @@ export default function GalleryPage() {
               >
                 <Image
                   src={image.image_url}
-                  alt={image.caption ?? ""}
+                  alt={image.caption ?? "Visionary Masters Global project gallery image"}
                   fill
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   className="object-cover transition-transform duration-300 group-hover:scale-105"
@@ -99,7 +99,7 @@ export default function GalleryPage() {
             <div className="relative aspect-[4/3] w-full">
               <Image
                 src={active.image_url}
-                alt={active.caption ?? ""}
+                alt={active.caption ?? "Visionary Masters Global project gallery image"}
                 fill
                 sizes="100vw"
                 className="rounded-lg object-contain"
