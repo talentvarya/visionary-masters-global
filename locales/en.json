@@ -1,7 +1,7 @@
 {
   "seo": {
-    "title": "AI Automation, Excel & Power BI | Visionary Masters Global",
-    "description": "AI voice assistants, appointment booking, Excel automation and Power BI dashboards built for your business. Discuss your project today."
+    "title": "Smart Workflows, Excel & Power BI | Visionary Masters Global",
+    "description": "Voice assistants, appointment booking, Excel solutions and Power BI dashboards built around the way your team works. Discuss your project today."
   },
   "nav": {
     "home": "Home",
@@ -14,8 +14,8 @@
     "getInTouch": "Get in Touch"
   },
   "home": {
-    "heroTagline": "AI Automation Solutions That Save Time and Help Your Business Grow",
-    "heroIntro": "I build practical AI solutions around the way your business works—from voice assistants that answer calls and book appointments to workflow automation, Excel solutions, Power BI dashboards and advertising content.",
+    "heroTagline": "Smart Solutions That Save Time and Help Your Company Grow",
+    "heroIntro": "I build practical digital systems around the way your team works—from voice assistants that answer calls and book appointments to connected workflows, Excel solutions, Power BI dashboards and advertising content.",
     "ctaButton": "Discuss Your Project",
     "trustPoints": [
       { "title": "Built Around Your Business", "body": "A practical solution for your process, tools and goals." },
@@ -23,7 +23,7 @@
       { "title": "From Idea to Delivery", "body": "Clear planning, development, testing and support." }
     ],
     "servicesTeaser": "What Can I Build for You?",
-    "servicesTeaserSubtitle": "Custom AI automation, data and creative solutions designed to reduce manual work and improve everyday business operations.",
+    "servicesTeaserSubtitle": "Custom digital, data and creative solutions designed to reduce manual work and improve everyday operations.",
     "viewAllServices": "View All Services",
     "processEyebrow": "A Simple, Practical Process",
     "processTitle": "From Your Business Problem to a Working Solution",
@@ -35,8 +35,8 @@
       { "title": "Launch and Support", "body": "You receive the working solution, clear guidance and help after delivery." }
     ],
     "exampleEyebrow": "Real-World Example",
-    "exampleTitle": "AI Appointment Booking for a Diagnostic Lab",
-    "exampleBody": "When a customer calls, an AI voice assistant can answer common questions, collect patient details and book an appointment. The information can then be organised automatically in Excel or Google Sheets for the lab team.",
+    "exampleTitle": "Appointment Booking for a Diagnostic Lab",
+    "exampleBody": "When a customer calls, a voice assistant can answer common questions, collect patient details and book an appointment. The information can then be organised automatically in Excel or Google Sheets for the lab team.",
     "exampleSteps": [
       "Answers incoming customer calls",
       "Books appointments using your process",
@@ -44,14 +44,14 @@
       "Reduces repetitive work for your team"
     ],
     "exampleCta": "Build a Solution Like This",
-    "aboutTeaser": "Practical AI Skills Backed by Real Business Experience",
-    "aboutTeaserBody": "I’m Vineet Grover, founder of Visionary Masters Global. I combine 18 years of live-events experience with training in AI systems, automation and data analytics to build dependable solutions for clients.",
+    "aboutTeaser": "Practical Skills Backed by Real-World Experience",
+    "aboutTeaserBody": "I’m Vineet Grover, founder of Visionary Masters Global. I combine 18 years of live-events experience with training in intelligent systems, workflow design and data analytics to build dependable solutions for clients.",
     "learnMore": "About Vineet and His Training",
     "portfolioTeaser": "Recent Work",
     "portfolioTeaserSubtitle": "A look at what we've delivered for our clients.",
     "viewPortfolio": "View Our Work",
     "finalCtaTitle": "Have a Repetitive Business Task? Let’s Automate It.",
-    "finalCtaBody": "Tell me what is taking too much time in your business. I’ll help you plan and build a practical AI, automation or data solution.",
+    "finalCtaBody": "Tell me what is taking too much time in your company. I’ll help you plan and build a practical workflow, data or digital solution.",
     "finalCtaButton": "Discuss Your Requirement"
   },
   "about": {
@@ -88,7 +88,7 @@
       {
         "id": "email-communication",
         "title": "AI Voice Assistants & Appointment Booking",
-        "shortDescription": "Answer customer calls, collect details and book appointments with an AI voice assistant connected to your process.",
+        "shortDescription": "Answer customer calls, collect details and book appointments with a voice assistant connected to your process.",
         "image": "email-template-sample.png",
         "whatItIs": "A custom AI voice assistant that handles incoming calls, answers common questions, captures customer information and books appointments using your business rules.",
         "whatsIncluded": [
@@ -102,7 +102,7 @@
       {
         "id": "powerbi-dashboards",
         "title": "Power BI Dashboards & Business Reporting",
-        "shortDescription": "Interactive Power BI dashboards that turn raw business data into clear, actionable insight.",
+        "shortDescription": "Interactive Power BI dashboards that turn sales and operations data into clear, actionable insight.",
         "image": "powerbi-dashboard-sample.png",
         "whatItIs": "Interactive, visually clean Power BI dashboards built from your existing data sources — sales, operations, finance, or marketing — so decision-makers can see what matters at a glance.",
         "whatsIncluded": [
@@ -116,7 +116,7 @@
       {
         "id": "mis-reporting",
         "title": "ATS-Friendly Resume Builder Solutions",
-        "shortDescription": "AI-assisted resume tools that help job seekers create organised, role-specific and ATS-friendly resumes.",
+        "shortDescription": "Resume tools that help job seekers create organised, role-specific and ATS-friendly applications.",
         "image": "mis-report-sample.png",
         "whatItIs": "A custom resume-building solution that helps job seekers organise their experience, match relevant job requirements and prepare a clean resume for applicant tracking systems.",
         "whatsIncluded": [
@@ -130,7 +130,7 @@
       {
         "id": "excel-solutions",
         "title": "Excel Automation & MIS Reporting",
-        "shortDescription": "Custom Excel trackers, automated workbooks and recurring MIS reports built around your exact workflow.",
+        "shortDescription": "Custom Excel trackers, smart workbooks and recurring MIS reports built around your exact workflow.",
         "image": "excel-tracker-sample.png",
         "whatItIs": "Purpose-built Excel workbooks — trackers, calculators, inventory sheets, budget tools — designed around how your team actually works, with formulas and automation that remove manual effort.",
         "whatsIncluded": [
@@ -237,7 +237,7 @@
   },
   "footer": {
     "companyName": "Visionary Masters Global Pvt Ltd",
-    "tagline": "18 Years of Real-World Execution. Now Powered by AI.",
+    "tagline": "18 Years of Real-World Execution. Now Powered by Smart Tools.",
     "quickLinks": "Quick Links",
     "contactInfo": "Contact Info",
     "rightsReserved": "All rights reserved."
