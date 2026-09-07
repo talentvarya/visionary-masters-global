@@ -66,7 +66,7 @@ export default function ServiceCard({
         <div className="pointer-events-none absolute inset-0 select-none" aria-hidden="true">
           <Image
             src={imageSrc}
-            alt=""
+            alt={`${item.title} example`}
             fill
             sizes="(max-width: 768px) 100vw, 400px"
             className="object-cover opacity-30"
@@ -134,3 +134,4 @@ export default function ServiceCard({
     </div>
   );
 }
+
