@@ -7,6 +7,8 @@ import Footer from "@/components/Footer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import en from "@/locales/en.json";
 
+const SITE_URL = "https://visionary-masters-global-tsgl.vercel.app";
+
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
 const notoDevanagari = Noto_Sans_Devanagari({
   subsets: ["devanagari"],
@@ -54,13 +56,48 @@ export async function generateMetadata(): Promise<Metadata> {
     }
   }
 
-  return { title, description };
+  return {
+    metadataBase: new URL(SITE_URL),
+    title,
+    description,
+    alternates: { canonical: "/" },
+    openGraph: {
+      type: "website",
+      url: "/",
+      siteName: "Visionary Masters Global",
+      title,
+      description,
+      images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "Visionary Masters Global AI automation services" }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: ["/opengraph-image"],
+    },
+  };
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    name: "Visionary Masters Global Pvt Ltd",
+    url: SITE_URL,
+    founder: { "@type": "Person", name: "Vineet Grover" },
+    areaServed: "Worldwide",
+    email: "vineet.grover.1990@gmail.com",
+    sameAs: ["https://www.linkedin.com/in/vineetgrover9581/"],
+    description: en.seo.description,
+  };
+
   return (
     <html lang="en">
       <body className={`${inter.variable} ${notoDevanagari.variable} ${notoGurmukhi.variable} font-sans flex min-h-screen flex-col`}>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
         <Providers>
           <Header />
           <main className="flex-1">{children}</main>

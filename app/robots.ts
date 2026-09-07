@@ -9,5 +9,7 @@ export default function robots(): MetadataRoute.Robots {
       // until it's ready to launch.
       disallow: ["/admin/", "/clients"],
     },
+    sitemap: "https://visionary-masters-global-tsgl.vercel.app/sitemap.xml",
+    host: "https://visionary-masters-global-tsgl.vercel.app",
   };
 }
