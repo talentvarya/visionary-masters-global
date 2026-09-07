@@ -33,6 +33,9 @@ export default function Footer() {
               <li><Link href="/services" className="hover:text-accent">{t.nav.services}</Link></li>
               <li><Link href="/gallery" className="hover:text-accent">{t.nav.gallery}</Link></li>
               <li><Link href="/contact" className="hover:text-accent">{t.nav.contact}</Link></li>
+              <li><Link href="/privacy-policy" className="hover:text-accent">Privacy Policy</Link></li>
+              <li><Link href="/terms-of-service" className="hover:text-accent">Terms of Service</Link></li>
+              <li><Link href="/editorial-policy" className="hover:text-accent">Editorial Policy</Link></li>
             </ul>
           </div>
 
@@ -71,7 +74,8 @@ export default function Footer() {
         </div>
 
         <div className="mt-8 border-t border-white/10 pt-6 text-center text-xs text-white/50">
-          &copy; {new Date().getFullYear()} {t.footer.companyName}. {t.footer.rightsReserved}
+          <p>&copy; {new Date().getFullYear()} {t.footer.companyName}. {t.footer.rightsReserved}</p>
+          <p className="mt-2">Content reviewed by Vineet Grover, Founder &amp; Director. Last updated <time dateTime="2026-09-07">September 7, 2026</time>.</p>
         </div>
       </div>
     </footer>
