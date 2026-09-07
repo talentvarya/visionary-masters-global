@@ -37,7 +37,7 @@ export default function UpdatesBanner() {
   const track = [...repeated, ...repeated];
 
   return (
-    <div className="w-full overflow-hidden border-y border-accent/30 bg-accent/15 py-3">
+    <div className="w-full overflow-hidden border-y border-accent/30 bg-accent/15 py-5">
       <div
         className="flex w-max gap-10 animate-marquee hover:[animation-play-state:paused]"
         style={
@@ -47,14 +47,14 @@ export default function UpdatesBanner() {
         {track.map((update, i) => {
           const Icon = update.kind === "tip" ? Lightbulb : Megaphone;
           return (
-            <div key={`${update.id}-${i}`} className="flex shrink-0 items-center gap-2.5">
-              <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-accent text-navy">
-                <Icon size={14} />
+            <div key={`${update.id}-${i}`} aria-hidden={i >= updates.length} className="flex shrink-0 items-center gap-3">
+              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-accent text-navy">
+                <Icon size={18} />
               </span>
-              <span className="rounded-full bg-navy px-2.5 py-0.5 text-xs font-semibold uppercase tracking-wide text-white">
+              <span className="rounded-full bg-navy px-3 py-1 text-sm font-semibold uppercase tracking-wide text-white">
                 {update.kind === "tip" ? t.updates.tipLabel : t.updates.updateLabel}
               </span>
-              <span className="whitespace-nowrap text-sm font-medium text-navy">
+              <span className="whitespace-nowrap text-base font-medium text-navy">
                 {localized(update, "message", language)}
               </span>
             </div>
@@ -64,3 +64,4 @@ export default function UpdatesBanner() {
     </div>
   );
 }
+
