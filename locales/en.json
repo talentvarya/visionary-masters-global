@@ -27,10 +27,10 @@
     "viewAllServices": "View All Services",
     "processEyebrow": "A Simple, Practical Process",
     "processTitle": "From Your Business Problem to a Working Solution",
-    "processSubtitle": "You do not need to understand every AI tool. Start by explaining the work that takes too much time or needs to run better.",
+    "processSubtitle": "You do not need to understand every digital tool. Start by explaining the work that takes too much time or needs to run better.",
     "processSteps": [
       { "title": "Share Your Requirement", "body": "Tell me about the task, bottleneck or customer experience you want to improve." },
-      { "title": "Get a Solution Plan", "body": "I map the process and recommend the right AI tools, automation and integrations." },
+      { "title": "Get a Solution Plan", "body": "I map the process and recommend the right AI tools, workflow connections and integrations." },
       { "title": "Build and Test", "body": "Your solution is developed and tested with realistic business scenarios." },
       { "title": "Launch and Support", "body": "You receive the working solution, clear guidance and help after delivery." }
     ],
@@ -57,40 +57,40 @@
   "about": {
     "pageTitle": "About Us",
     "overviewTitle": "Company Overview",
-    "overviewBody": "Visionary Masters Global Pvt Ltd combines nearly two decades of hands-on operational experience with modern AI-powered business support. Founded on the principle that real-world discipline and cutting-edge technology together deliver results traditional agencies can't match, we help businesses streamline their operations, reporting, and communication — faster and smarter.",
+    "overviewBody": "Visionary Masters Global Pvt Ltd combines nearly two decades of hands-on operational experience with modern intelligent business support. Founded on the principle that real-world discipline and cutting-edge technology together deliver results traditional agencies can't match, we help businesses streamline their operations, reporting, and communication — faster and smarter.",
     "founderNoteTitle": "Founder's Note",
-    "founderNoteBody": "Our founder, Vineet Grover, spent 18 years in the high-pressure world of live events — where there's no room for delay and every detail counts. That discipline now shapes how Visionary Masters Global operates: reliable, detail-driven, and powered by AI tools that get things done faster.",
+    "founderNoteBody": "Our founder, Vineet Grover, spent 18 years in the high-pressure world of live events — where there's no room for delay and every detail counts. That discipline now shapes how Visionary Masters Global operates: reliable, detail-driven, and powered by smart tools that get things done faster.",
     "founderName": "Vineet Grover",
     "founderTitle": "Founder & Director",
     "certificationsTitle": "Team Certifications",
-    "certificationsSubtitle": "be10x AI Career Accelerator Program",
+    "certificationsSubtitle": "be10x Career Accelerator Program",
     "certifications": [
-      "AI Fundamentals & Ecosystem Mastery",
-      "AI Agents & Autonomous Systems (N8N Automation)",
-      "AI Tools Workshop (ChatGPT-based Productivity)",
-      "Certified AI Office & Productivity Specialist",
-      "Certified AI-Powered Data Analytics Specialist"
+      "Intelligent Technology Fundamentals",
+      "Autonomous Systems & N8N Workflows",
+      "Productivity Tools Workshop",
+      "Certified Office & Productivity Specialist",
+      "Certified Data Analytics Specialist"
     ]
   },
   "services": {
     "pageTitle": "Services",
     "sectionTitle": "Visionary Masters Global — Services",
-    "sectionSubtitle": "Eight practical, AI-powered services built to keep your business running smoothly.",
+    "sectionSubtitle": "Eight practical services built to keep your business running smoothly.",
     "readMore": "Read More",
     "readLess": "Read Less",
     "whatItIs": "What It Is",
     "whatsIncluded": "What's Included",
     "outcome": "Outcome",
     "launchingSoon": "Launching Soon",
-    "aiCapabilitiesTitle": "Powered by AI, Grounded in Experience",
-    "aiCapabilitiesBody": "Every service is backed by modern AI tools — from generative design to autonomous workflows — combined with 18 years of real operational discipline.",
+    "aiCapabilitiesTitle": "Powered by Modern Tools, Grounded in Experience",
+    "aiCapabilitiesBody": "Every service is backed by modern tools — from generative design to autonomous workflows — combined with 18 years of real operational discipline.",
     "items": [
       {
         "id": "email-communication",
-        "title": "AI Voice Assistants & Appointment Booking",
+        "title": "Voice Assistants & Appointment Booking",
         "shortDescription": "Answer customer calls, collect details and book appointments with a voice assistant connected to your process.",
         "image": "email-template-sample.png",
-        "whatItIs": "A custom AI voice assistant that handles incoming calls, answers common questions, captures customer information and books appointments using your business rules.",
+        "whatItIs": "A custom voice assistant that handles incoming calls, answers common questions, captures customer information and books appointments using your business rules.",
         "whatsIncluded": [
           "Call flow designed around your customer journey",
           "Answers for common customer questions",
@@ -146,7 +146,7 @@
         "title": "Business Presentations & Pitch Decks",
         "shortDescription": "Polished, professional presentations that communicate your message clearly and confidently.",
         "image": "presentation-slide-sample.png",
-        "whatItIs": "Business presentations — pitch decks, board updates, client proposals, training material — designed for clarity and visual impact, built or refined using AI-assisted design tools.",
+        "whatItIs": "Business presentations — pitch decks, board updates, client proposals, training material — designed for clarity and visual impact, built or refined using assisted design tools.",
         "whatsIncluded": [
           "Slide structure and storyline built around your key message",
           "Professional, on-brand visual design",
@@ -171,14 +171,14 @@
       },
       {
         "id": "ai-video-generation",
-        "title": "AI Ad Images, Videos & Voiceovers",
-        "shortDescription": "AI-generated advertising images, videos and voiceovers for campaigns, promotions and social media.",
+        "title": "Ad Images, Videos & Voiceovers",
+        "shortDescription": "Generated advertising images, videos and voiceovers for campaigns, promotions and social media.",
         "image": "video-generation-sample.png",
-        "whatItIs": "Short-form and business videos created using AI generation tools — including natural-sounding AI voiceovers — for marketing, product explainers, and internal training.",
+        "whatItIs": "Short-form and business videos created using modern generation tools — including natural-sounding AI voiceovers — for marketing, product explainers, and internal training.",
         "whatsIncluded": [
           "Script writing and storyboard planning",
-          "AI-generated visuals and video sequences",
-          "AI voiceover in the language and tone you need",
+          "Generated visuals and video sequences",
+          "Natural voiceover in the language and tone you need",
           "Editing, captions, and export in the right format for each platform"
         ],
         "outcome": "Professional-looking video content produced faster and at a fraction of traditional production cost."
@@ -243,3 +243,5 @@
     "rightsReserved": "All rights reserved."
   }
 }
+
+
