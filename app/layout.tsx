@@ -86,6 +86,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       { "@type": "ProfessionalService", "@id": `${SITE_URL}/#organization`, name: "Visionary Masters Global Pvt Ltd", url: SITE_URL, founder: { "@id": `${SITE_URL}/#founder` }, areaServed: "Worldwide", email: "vineet.grover.1990@gmail.com", sameAs: ["https://www.linkedin.com/in/vineetgrover9581/"], description: en.seo.description },
       { "@type": "Person", "@id": `${SITE_URL}/#founder`, name: "Vineet Grover", jobTitle: "Founder & Director", worksFor: { "@id": `${SITE_URL}/#organization` }, sameAs: ["https://www.linkedin.com/in/vineetgrover9581/"] },
       { "@type": "WebSite", "@id": `${SITE_URL}/#website`, name: "Visionary Masters Global", url: SITE_URL, publisher: { "@id": `${SITE_URL}/#organization` } },
+      { "@type": "BreadcrumbList", "@id": `${SITE_URL}/#breadcrumbs`, itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+      ] },
       { "@type": "FAQPage", "@id": `${SITE_URL}/#faq`, mainEntity: [
         ["What can you help me improve?", "Customer calls, appointment handling, spreadsheets, reporting, presentations, websites and marketing content."],
         ["Do I need to change my current tools?", "Usually no. Existing tools such as Excel, Google Sheets, Power BI and forms can often be connected."],
