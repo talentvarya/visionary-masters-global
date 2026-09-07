@@ -5,21 +5,22 @@ import Image from "next/image";
 import {
   Mail,
   BarChart3,
-  FileSpreadsheet,
   Table2,
   Presentation,
   Globe,
   Video,
   Workflow,
+  PhoneCall,
+  FileText,
   ChevronDown,
   type LucideIcon,
 } from "lucide-react";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
 
 const ICONS: Record<string, LucideIcon> = {
-  "email-communication": Mail,
+  "email-communication": PhoneCall,
   "powerbi-dashboards": BarChart3,
-  "mis-reporting": FileSpreadsheet,
+  "mis-reporting": FileText,
   "excel-solutions": Table2,
   presentations: Presentation,
   "simple-websites": Globe,
