@@ -82,14 +82,17 @@ export async function generateMetadata(): Promise<Metadata> {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   const organizationSchema = {
     "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    name: "Visionary Masters Global Pvt Ltd",
-    url: SITE_URL,
-    founder: { "@type": "Person", name: "Vineet Grover" },
-    areaServed: "Worldwide",
-    email: "vineet.grover.1990@gmail.com",
-    sameAs: ["https://www.linkedin.com/in/vineetgrover9581/"],
-    description: en.seo.description,
+    "@graph": [
+      { "@type": "ProfessionalService", "@id": `${SITE_URL}/#organization`, name: "Visionary Masters Global Pvt Ltd", url: SITE_URL, founder: { "@id": `${SITE_URL}/#founder` }, areaServed: "Worldwide", email: "vineet.grover.1990@gmail.com", sameAs: ["https://www.linkedin.com/in/vineetgrover9581/"], description: en.seo.description },
+      { "@type": "Person", "@id": `${SITE_URL}/#founder`, name: "Vineet Grover", jobTitle: "Founder & Director", worksFor: { "@id": `${SITE_URL}/#organization` }, sameAs: ["https://www.linkedin.com/in/vineetgrover9581/"] },
+      { "@type": "WebSite", "@id": `${SITE_URL}/#website`, name: "Visionary Masters Global", url: SITE_URL, publisher: { "@id": `${SITE_URL}/#organization` } },
+      { "@type": "FAQPage", "@id": `${SITE_URL}/#faq`, mainEntity: [
+        ["What can you help me improve?", "Customer calls, appointment handling, spreadsheets, reporting, presentations, websites and marketing content."],
+        ["Do I need to change my current tools?", "Usually no. Existing tools such as Excel, Google Sheets, Power BI and forms can often be connected."],
+        ["How does a project begin?", "Send your requirement through the contact page so the scope and approach can be confirmed."],
+        ["Can you support the solution after launch?", "Handover guidance and ongoing support can be included."],
+      ].map(([name, text]) => ({ "@type": "Question", name, acceptedAnswer: { "@type": "Answer", text } })) },
+    ],
   };
 
   return (
@@ -109,3 +112,4 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     </html>
   );
 }
+
