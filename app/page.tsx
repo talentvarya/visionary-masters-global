@@ -4,7 +4,6 @@ import Link from "next/link";
 import { ArrowRight, Bot, CalendarCheck, ClipboardList, MessageSquareText } from "lucide-react";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
 import { languageFontClass } from "@/lib/i18n/translations";
-import HomeSlides from "@/components/HomeSlides";
 import UpdatesBanner from "@/components/UpdatesBanner";
 
 export default function HomePage() {
@@ -28,12 +27,7 @@ export default function HomePage() {
             Written and reviewed by <Link href="/about" className="font-semibold text-accent hover:text-accent-light">Vineet Grover</Link>, Founder &amp; Director, based on practical business and AI automation experience. <time dateTime="2026-09-07">Updated September 7, 2026</time>.
           </p>
         </div>
-
-        <div className="mt-10">
-          <HomeSlides />
-        </div>
-
-        <div className="mx-auto max-w-5xl px-4 pb-20 pt-16 text-center sm:px-6 sm:pb-28 sm:pt-20 lg:px-8">
+<div className="mx-auto max-w-5xl px-4 pb-20 pt-16 text-center sm:px-6 sm:pb-28 sm:pt-20 lg:px-8">
           <Link
             href="/contact"
             className="inline-flex items-center gap-2 rounded-md bg-accent px-6 py-3 text-base font-semibold text-navy hover:bg-accent-light transition-colors"
@@ -188,3 +182,6 @@ export default function HomePage() {
     </div>
   );
 }
+
+
+
