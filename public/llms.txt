@@ -1,0 +1,25 @@
+# Visionary Masters Global
+
+> Visionary Masters Global builds practical AI automation, data and creative solutions that help businesses reduce manual work and operate more efficiently.
+
+## Services
+
+- [AI Voice Assistants & Appointment Booking](https://visionary-masters-global-tsgl.vercel.app/services/email-communication): AI voice assistants that answer customer calls, collect details and book appointments.
+- [Power BI Dashboard Development](https://visionary-masters-global-tsgl.vercel.app/services/powerbi-dashboards): Interactive dashboards and business reporting for sales, finance and operations.
+- [ATS-Friendly Resume Builder Solutions](https://visionary-masters-global-tsgl.vercel.app/services/mis-reporting): AI-assisted resume tools for organised, role-specific and ATS-friendly applications.
+- [Excel Automation & MIS Reporting](https://visionary-masters-global-tsgl.vercel.app/services/excel-solutions): Custom trackers, automated workbooks, formulas and recurring MIS reports.
+- [Business Presentations & Pitch Decks](https://visionary-masters-global-tsgl.vercel.app/services/presentations): Clear, professional presentations for proposals, pitches, reporting and training.
+- [Business Websites & Landing Pages](https://visionary-masters-global-tsgl.vercel.app/services/simple-websites): Fast, mobile-friendly websites and landing pages for businesses.
+- [AI Ad Images, Videos & Voiceovers](https://visionary-masters-global-tsgl.vercel.app/services/ai-video-generation): AI-generated advertising visuals, videos and voiceovers for campaigns.
+- [Business Workflow Automation with n8n & Make](https://visionary-masters-global-tsgl.vercel.app/services/workflow-automation): Connected workflows for enquiries, appointments, notifications, spreadsheets and reports.
+
+## Important pages
+
+- [Home](https://visionary-masters-global-tsgl.vercel.app/)
+- [About](https://visionary-masters-global-tsgl.vercel.app/about)
+- [Services](https://visionary-masters-global-tsgl.vercel.app/services)
+- [Contact](https://visionary-masters-global-tsgl.vercel.app/contact)
+
+## Contact
+
+To discuss an AI automation, Excel, Power BI, website, advertising or resume project, visit the [Contact page](https://visionary-masters-global-tsgl.vercel.app/contact).
