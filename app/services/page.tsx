@@ -11,7 +11,7 @@ import type { PortfolioPost, ServiceImage } from "@/types/database";
 
 export default function ServicesPage() {
   const { t, language } = useLanguage();
-  const [posts, setPosts] = useState<PortfoPost[]>([]);
+  const [posts, setPosts] = useState<PortfolioPost[]>([]);
   const [loadingPosts, setLoadingPosts] = useState(true);
   const [aiImageFailed, setAiImageFailed] = useState(false);
   const [serviceImages, setServiceImages] = useState<Record<string, string>>({});
