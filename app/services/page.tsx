@@ -11,7 +11,7 @@ import type { PortfolioPost, ServiceImage } from "@/types/database";
 
 export default function ServicesPage() {
   const { t, language } = useLanguage();
-  const [posts, setPosts] = useState<PortfolioPost[]>([]);
+  const [posts, setPosts] = useState<PortfoPost[]>([]);
   const [loadingPosts, setLoadingPosts] = useState(true);
   const [aiImageFailed, setAiImageFailed] = useState(false);
   const [serviceImages, setServiceImages] = useState<Record<string, string>>({});
@@ -68,7 +68,7 @@ export default function ServicesPage() {
             <h2 className="text-2xl font-bold text-navy">{t.services.aiCapabilitiesTitle}</h2>
             <p className="mt-4 leading-relaxed text-slate-600">{t.services.aiCapabilitiesBody}</p>
           </div>
-          {/* Sample image is added to /public/images later — until then this
+          {/* Sample image is added to /public/images later - until then this
               collapses so the section stays centred instead of half empty. */}
           {!aiImageFailed && (
             <div className="relative h-64 w-full overflow-hidden rounded-xl bg-slate-200 sm:h-72">
@@ -85,7 +85,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Our Work — same page as Services */}
+      {/* Our Work - same page as Services */}
       <section id="our-work" className="mx-auto max-w-7xl scroll-mt-20 px-4 py-14 sm:px-6 lg:px-8">
         <div className="text-center">
           <h2 className="text-2xl font-bold text-navy sm:text-3xl">{t.portfolio.pageTitle}</h2>
@@ -93,6 +93,22 @@ export default function ServicesPage() {
         </div>
 
         <div className="mt-10">
+          <article className="mx-auto mb-8 max-w-3xl overflow-hidden rounded-2xl border border-accent/30 bg-gradient-to-br from-navy to-slate-800 p-7 text-white shadow-sm sm:p-9">
+            <p className="text-xs font-bold uppercase tracking-[0.2em] text-accent">Featured live project</p>
+            <h3 className="mt-3 text-2xl font-bold sm:text-3xl">TalentVarya - Job Platform &amp; ATS</h3>
+            <p className="mt-4 max-w-2xl leading-relaxed text-slate-200">
+              A live job-platform product designed to help candidates discover opportunities and help employers manage hiring workflows. It includes job search, employer tools, ATS-focused features, safety information and an AI assistant.
+            </p>
+            <a
+              href="https://talentvarya-mvp.vercel.app"
+              target="_blank"
+              rel="noreferrer"
+              className="mt-6 inline-flex items-center rounded-md bg-accent px-5 py-3 font-semibold text-navy transition-colors hover:bg-white"
+            >
+              View the live TalentVarya project <span aria-hidden="true" className="ml-2">-></span>
+            </a>
+          </article>
+
           {loadingPosts ? (
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {[...Array(3)].map((_, i) => (
